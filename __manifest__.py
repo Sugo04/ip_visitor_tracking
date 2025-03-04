@@ -2,7 +2,7 @@
     'name': 'IP Visitor Tracking',
     'version': '1.0',
     'category': 'Website',
-    'summary': 'Localiza a los ususarios que se conecten geográficamente.',
+    'summary': 'Localiza a los ususarios que se conecten geográficamente a nuestra empresa.',
     'author': 'Héctor Martín Ortega',
     'website': 'https://www.example.com',
     'depends': ['base', 'website'],
