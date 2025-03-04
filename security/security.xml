@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Define security group -->
+        <record id="group_ip_visitor_tracking_admin" model="res.groups">
+            <field name="name">IP Visitor Tracking / Administrator</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+        </record>
+        
+        <!-- Security rules -->
+        <record id="ip_visitor_tracking_rule" model="ir.rule">
+            <field name="name">IP Visitor Tracking: Admin Only</field>
+            <field name="model_id" ref="model_ip_visitor_tracking"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('ip_visitor_tracking.group_ip_visitor_tracking_admin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+    </data>
+</odoo>
